@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videos",
+  "info": {
+    "singularName": "video",
+    "pluralName": "videos",
+    "displayName": "Video",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "videoId": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "published": {
+      "type": "date",
+      "required": true
+    },
+    "channelId": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "thumbnails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::thumbnail.thumbnail",
+      "mappedBy": "video"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "thumbnails",
+  "info": {
+    "singularName": "thumbnail",
+    "pluralName": "thumbnails",
+    "displayName": "Thumbnail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "required": true,
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer",
+      "required": true
+    },
+    "video": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::video.video",
+      "inversedBy": "thumbnails"
+    }
+  }
+}
